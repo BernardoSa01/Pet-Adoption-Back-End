@@ -1,0 +1,16 @@
+# Logs
+log/
+*.log
+
+# VSCode
+.vscode/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# SQLite DB
+*.db
+
+# venv
+venv
