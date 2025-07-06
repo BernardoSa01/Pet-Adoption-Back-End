@@ -1,4 +1,4 @@
-from flask_openapi3 import OpenAPI, Info, Tag 
+from flask_openapi3 import OpenAPI, Info, Tag
 from flask import redirect, request 
 from urllib.parse import unquote
 
@@ -7,9 +7,16 @@ from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 
 from model import Session, Pet
 from logger import logger
-from schemas import *
 from flask_cors import CORS
 from typing import List
+
+from schemas.pet import (
+    PetSchema, PetBuscaIdSchema, PetBuscaSchema,
+    PetViewSchema, ListagemPetsSchema, PetDelSchema, ErrorSchema,
+    apresenta_pet, apresenta_pets, apresenta_pets_lista
+)
+
+
 
 
 # Definindo título e versão da API
@@ -79,15 +86,9 @@ def get_pets():
 # GET - Buscar um pet por nome
 @app.get('/pet', tags=[pet_tag],
          responses={"200": ListagemPetsSchema, "404": ErrorSchema})
-def get_pet():
-    """Busca pets com o nome fornecido via query string."""
-    nome = request.args.get("nome")  # <-- Esse é o segredo
-
-    if not nome:
-        error_msg = "Parâmetro 'nome' não foi fornecido na query string."
-        logger.warning(error_msg)
-        return {"message": error_msg}, 400
-
+def get_pet(query: PetBuscaSchema):
+    """Busca pets com o nome fornecido na query string"""
+    nome = query.nome
     logger.debug(f"Buscando pets com nome (case-insensitive): '{nome}'")
 
     session = Session()
