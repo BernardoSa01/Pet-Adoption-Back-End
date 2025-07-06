@@ -1,38 +1,85 @@
-# 🐾 Pet Adoption - API
+<h1 align="center">🐾 Pet Adoption - API</h1>
 
-Este repositório contém a API desenvolvida para o projeto **Pet Adoption**, que faz parte do Projeto MVP do sprint 1 da pós-graduação em Desenvolvimento Full Stack pela PUC-Rio. A aplicação tem como objetivo cadastrar animais disponíveis para adoção, permitindo o gerenciamento de informações como nome, espécie, idade e status de adoção.
+<p align="center"> Este repositório contém a API desenvolvida para o projeto Pet Adoption, que faz parte do Projeto MVP do sprint 1 da pós-graduação em Desenvolvimento Full Stack pela PUC-Rio. </p>
+
+<p align="center">A aplicação tem como objetivo gerenciar um sistema de cadastro de animais disponíveis para adoção, permitindo operações como cadastro, listagem, busca e remoção de pets.</p>
+
+> 🎯 Público-alvo: ONGs, abrigos de animais, clínicas veterinárias e iniciativas independentes de adoção.
+---
 
 ## 🚀 Tecnologias utilizadas
 
-- Python
-- Flask
-- SQLite
-- Swagger (Documentação)
+- **Python 3.11**
+- **Flask**
+- **SQLite**
+- **Swagger (Documentação)**
+---
 
-## 📂 Estrutura inicial do projeto
+## 📂 Estrutura do projeto
 ```
 pet-adoption-api
 ├── app.py
+├── model/
+├── schemas
 ├── requirements.txt
 └── README.md
 ```
+---
 
 
-## 🎯 Funcionalidades (🚧 Em desenvolvimento)
-
-Quando finalizada, esta API permitirá:
+## 🎯 Funcionalidades 
 
 - Cadastrar novos pets
 - Listar todos os pets cadastrados
-- Buscar pet por nome ou ID
+- Buscar pet por nome 
 - Remover pets
-- Alterar status (adotado / disponível) 
+---
 
-## ⚙️ Instalação e execução (a definir)
+## ⚙️ Instalação e execução 
 
-Instruções completas estarão disponíveis assim que a configuração inicial for concluída.
+Siga os passos abaixo para executar o projeto localmente.
 
-## 🚧 Status do projeto
+### 1. Clone o repositório
 
-Em desenvolvimento. Este repositório está sendo construído, com melhorias sendo implementadas de forma gradativa até a finalização do desafio.
+```bash
+git clone https://github.com/BernardoSa01/Pet-Adoption-Back-End.git
+cd Pet-Adoption-Back-End
+```
+
+### 2. Crie e ative um ambiente virtual
+```bash
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# macOS/Linux
+source venv/bin/activate
+```
+
+### 3. Instale as dependências
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Execute o servidor
+```bash
+python app.py
+```
+
+O servidor estará disponível em:
+```bash
+http://localhost:5001
+```
+
+### 📘 Documentação da API (Swagger)
+A documentação interativa pode ser acessada após iniciar o servidor:
+```bash
+http://localhost:5001/openapi/swagger
+```
+---
+
+## 📄 Licença
+Este projeto é de uso acadêmico, criado para fins de avaliação no curso de pós-graduação da PUC-Rio
+
+
+
 
