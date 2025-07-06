@@ -15,6 +15,7 @@ class PetBuscaSchema(BaseModel):
   nome: str
 
 
+
 class PetBuscaIdSchema(BaseModel):
   """Define como deve ser a busca de um pet pelo id"""
   id: int 
@@ -41,6 +42,11 @@ class PetDelSchema(BaseModel):
 
 class PetsListSchema(BaseModel):
     pets: List[PetViewSchema]
+
+
+class ErrorSchema(BaseModel):
+    """ Define como uma mensagem de erro será retornada """
+    message: str
 
 
 def apresenta_pet(pet):
